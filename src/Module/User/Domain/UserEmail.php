@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Blog\module\domain;
+namespace Blog\Module\User\Domain;
 
 
 final class UserEmail
@@ -15,7 +15,7 @@ final class UserEmail
     private function validateEmail($email)
     {
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $email = null;
+            throw new \InvalidArgumentException(sprintf("The email '%s' is invalid", $email));
         }
         return $email;
     }

@@ -1,7 +1,6 @@
 <?php
 
-
-namespace Blog\Module\domain;
+namespace Blog\Module\User\Domain;
 
 
 final class UserPassword
@@ -23,7 +22,7 @@ final class UserPassword
                 return $password;
             }
         }
-        return null;
+        throw new \InvalidArgumentException(sprintf("The password '%s' is invalid", $password));
     }
 
     private function encryptPassword($password)
