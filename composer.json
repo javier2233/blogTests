@@ -30,7 +30,8 @@
   ],
   "scripts": {
     "test": [
-      "phpunit --configuration phpunit.xml"
+      "phpunit --configuration phpunit.xml",
+      "behat"
     ]
   }
 }

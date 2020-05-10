@@ -1,0 +1,22 @@
+default:
+  autoload:
+    - "%paths.base%/tests/BlogIntegration"
+
+  suites:
+    UserCreate:
+      paths:
+        - "%paths.base%/tests/BlogIntegration/UserCreate/Feature"
+      contexts:
+        - BlogIntegration\UserCreate\Context\UserCreateContext
+    PostCreate:
+      paths:
+        - "%paths.base%/tests/BlogIntegration/PostCreate/Feature"
+      contexts:
+        - BlogIntegration\PostCreate\Context\CreatePostContext
+    FullUseCase:
+      paths:
+        - "%paths.base%/tests/BlogIntegration/FullUseCase/Feature"
+      contexts:
+        - BlogIntegration\FullUseCase\Context\FullUseCaseContext
+    formatters:
+      pretty: true
